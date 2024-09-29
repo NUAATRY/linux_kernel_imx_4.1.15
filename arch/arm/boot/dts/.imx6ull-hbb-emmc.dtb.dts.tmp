@@ -1381,6 +1381,18 @@
   status = "okay";
  };
 
+
+ key{
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "hbb-key";
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_key>;
+  key-gpio = <&gpio1 18 1>;
+  status = "okay";
+ };
+
+
 };
 
 &cpu0 {
@@ -1799,6 +1811,8 @@
     0x0114 0x03A0 0x0000 0x4 0x0 0x30b0
    >;
   };
+
+
   pinctrl_led: ledgrp {
    fsl,pins = <
     0x0068 0x02F4 0x0000 0x5 0x0 0x10B0
@@ -1809,7 +1823,11 @@
     0x000C 0x0050 0x0000 0x5 0x0 0x10B0
    >;
   };
-
+  pinctrl_key: keygrp{
+   fsl,pins = <
+    0x008C 0x0318 0x0000 0x5 0x0 0XF080
+   >;
+  };
  };
 };
 
@@ -1996,7 +2014,7 @@
  vmmc-supply = <&reg_sd1_vmmc>;
  status = "okay";
 };
-# 807 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
+# 825 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
 &usdhc2 {
  pinctrl-names = "default", "state_100mhz", "state_200mhz";
  pinctrl-0 = <&pinctrl_usdhc2_8bit>;

@@ -170,7 +170,7 @@
 		status = "okay";
 	};
 
-	/* HBB GPIOLED*/
+	/* HBB GPIOBEEP*/
 	beep{
 		#address-cells = <1>;
 		#size-cells = <1>;
@@ -180,6 +180,18 @@
 		beep-gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
 		status = "okay";
 	};
+
+	/* HBB GPIOkey */
+	key{
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "hbb-key";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_key>;
+		key-gpio = <&gpio1 18 GPIO_ACTIVE_LOW>;
+		status = "okay";
+	};
+
 
 };
 
@@ -599,6 +611,8 @@
 				MX6UL_PAD_LCD_RESET__WDOG1_WDOG_ANY    0x30b0
 			>;
 		};
+
+		/* 	自己添加  */
 		pinctrl_led: ledgrp {
 			fsl,pins = <
 				MX6UL_PAD_GPIO1_IO03__GPIO1_IO03    0x10B0
@@ -609,7 +623,11 @@
 				MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01    0x10B0
 			>;
 		};
-
+		pinctrl_key: keygrp{
+			fsl,pins = <
+				MX6UL_PAD_UART1_CTS_B__GPIO1_IO18  0XF080 /* 输入模式 */
+			>;
+		};
 	};
 };
 
