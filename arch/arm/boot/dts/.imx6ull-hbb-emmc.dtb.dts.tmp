@@ -1389,6 +1389,8 @@
   pinctrl-names = "default";
   pinctrl-0 = <&pinctrl_key>;
   key-gpio = <&gpio1 18 1>;
+  interrupt-parent = <&gpio1>;
+  interrupts = <18 (2 | 1)>;
   status = "okay";
  };
 
@@ -2014,7 +2016,7 @@
  vmmc-supply = <&reg_sd1_vmmc>;
  status = "okay";
 };
-# 825 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
+# 827 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
 &usdhc2 {
  pinctrl-names = "default", "state_100mhz", "state_200mhz";
  pinctrl-0 = <&pinctrl_usdhc2_8bit>;
