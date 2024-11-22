@@ -1345,39 +1345,16 @@
    spi-max-frequency = <100000>;
   };
  };
-
-
- dtsled{
-  #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "dts-led";
-  status = "okay";
-  reg = < 0x020c406c 0x04
-    0x020e0068 0x04
-    0x020e02f4 0x04
-    0x0209c000 0x04
-    0x0209c004 0x04>;
- };
-
-
- gpioled{
-  #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "hbb-gpioled";
-  pinctrl-names = "default";
-  pinctrl-0 = <&pinctrl_led>;
-  led-gpio = <&gpio1 3 1>;
-  status = "okay";
- };
-
-
-
+# 177 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
  dtsleds{
+  #address-cells = <1>;
+  #size-cells = <1>;
   compatible = "gpio-leds";
-  led0{
+  led0 {
    label = "red";
-   led-gpio = <&gpio1 3 1>;
-   default-state = "off";
+   gpios = <&gpio1 3 1>;
+   linux,default-trigger = "heartbeat";
+   default-state = "on";
   };
  };
 
@@ -2027,7 +2004,7 @@
  vmmc-supply = <&reg_sd1_vmmc>;
  status = "okay";
 };
-# 838 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
+# 843 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
 &usdhc2 {
  pinctrl-names = "default", "state_100mhz", "state_200mhz";
  pinctrl-0 = <&pinctrl_usdhc2_8bit>;

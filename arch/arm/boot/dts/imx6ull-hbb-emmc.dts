@@ -147,6 +147,7 @@
 	};
 
 	/*  hbb DTSLED*/
+/*
 	dtsled{
 		#address-cells = <1>;
 		#size-cells = <1>;
@@ -158,8 +159,9 @@
 				0x0209c000 0x04
 				0x0209c004 0x04>;
 	};
-
+*/
 	/* HBB GPIOLED*/
+/*
 	gpioled{
 		#address-cells = <1>;
 		#size-cells = <1>;
@@ -169,15 +171,18 @@
 		led-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
 		status = "okay";
 	};
-
+*/
 
 	/* HBB DTSLEDS*/
 	dtsleds{
+		#address-cells = <1>;
+		#size-cells = <1>;		
 		compatible = "gpio-leds";
-		led0{
+		led0 {
 			label = "red";
-			led-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
-			default-state = "off";
+			gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "heartbeat";
+			default-state = "on";
 		};
 	};	
 
