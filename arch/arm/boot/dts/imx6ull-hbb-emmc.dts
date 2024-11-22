@@ -170,6 +170,17 @@
 		status = "okay";
 	};
 
+
+	/* HBB DTSLEDS*/
+	dtsleds{
+		compatible = "gpio-leds";
+		led0{
+			label = "red";
+			led-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+	};	
+
 	/* HBB GPIOBEEP*/
 	beep{
 		#address-cells = <1>;
