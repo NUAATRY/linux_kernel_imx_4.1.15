@@ -1471,18 +1471,9 @@
  pinctrl-0 = <&pinctrl_i2c1>;
  status = "okay";
 
- mag3110@0e {
-  compatible = "fsl,mag3110";
-  reg = <0x0e>;
-  position = <2>;
- };
-
- fxls8471@1e {
-  compatible = "fsl,fxls8471";
+ ap3216c@1e {
+  compatible = "hbb,ap3216c";
   reg = <0x1e>;
-  position = <0>;
-  interrupt-parent = <&gpio5>;
-  interrupts = <0 8>;
  };
 };
 
@@ -1587,8 +1578,8 @@
 
   pinctrl_flexcan2: flexcan2grp{
    fsl,pins = <
-    0x00A0 0x032C 0x0588 0x2 0x0 0x1b020
-    0x009C 0x0328 0x0000 0x2 0x0 0x1b020
+
+
    >;
   };
 
@@ -1689,8 +1680,8 @@
 
   pinctrl_uart2: uart2grp {
    fsl,pins = <
-    0x0094 0x0320 0x0000 0x0 0x0 0x1b0b1
-    0x0098 0x0324 0x062C 0x0 0x1 0x1b0b1
+
+
     0x00A8 0x0334 0x0628 0x4 0x3 0x1b0b1
     0x00A4 0x0330 0x0000 0x4 0x0 0x1b0b1
    >;
@@ -1698,8 +1689,8 @@
 
   pinctrl_uart2dte: uart2dtegrp {
    fsl,pins = <
-    0x0094 0x0320 0x062C 0x0 0x0 0x1b0b1
-    0x0098 0x0324 0x0000 0x0 0x0 0x1b0b1
+
+
     0x00A8 0x0334 0x0000 0x4 0x0 0x1b0b1
     0x00A4 0x0330 0x0628 0x4 0x2 0x1b0b1
    >;
@@ -1814,6 +1805,14 @@
   pinctrl_key: keygrp{
    fsl,pins = <
     0x008C 0x0318 0x0000 0x5 0x0 0XF080
+   >;
+  };
+  pinctrl_ecspi3: icm20608 {
+   fsl,pins = <
+    0x0094 0x0320 0x0000 0x5 0x0 0x10b0
+    0x0098 0x0324 0x0554 0x8 0x0 0x10b1
+    0x00A0 0x032C 0x0558 0x8 0x0 0x10b1
+    0x009C 0x0328 0x055C 0x8 0x0 0x10b1
    >;
   };
  };
@@ -2002,7 +2001,7 @@
  vmmc-supply = <&reg_sd1_vmmc>;
  status = "okay";
 };
-# 856 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
+# 855 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
 &usdhc2 {
  pinctrl-names = "default", "state_100mhz", "state_200mhz";
  pinctrl-0 = <&pinctrl_usdhc2_8bit>;
@@ -2019,4 +2018,17 @@
  pinctrl-names = "default";
  pinctrl-0 = <&pinctrl_wdog>;
  fsl,wdog_b;
+};
+
+&ecspi3{
+ fsl,spi-num-chipselects = <1>;
+ cs-gpios = <&gpio1 20 1>;
+ pinctrl-names = "default";
+ pinctrl-0 = <&pinctrl_ecspi3>;
+ status = "okay";
+ spidev: icm20608@0{
+  compatible = "hbb,icm20608";
+  spi-max-frequency = <8000000>;
+  reg = <0>;
+ };
 };
