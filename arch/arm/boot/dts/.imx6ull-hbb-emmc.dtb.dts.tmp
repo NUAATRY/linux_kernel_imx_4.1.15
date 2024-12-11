@@ -1268,7 +1268,7 @@
    regulator-name = "VSD_3V3";
    regulator-min-microvolt = <3300000>;
    regulator-max-microvolt = <3300000>;
-   gpio = <&gpio1 9 0>;
+
    enable-active-high;
   };
 
@@ -1483,6 +1483,19 @@
  pinctrl-0 = <&pinctrl_i2c2>;
  status = "okay";
 
+ gt9147:gt9147@14 {
+  compatible = "hbb,gt9147";
+  reg = <0x14>;
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_tsc
+     &pinctrl_tsc_reset>;
+  interrupt-parent = <&gpio1>;
+  interrupts = <9 0>;
+  reset-gpios = <&gpio5 9 1>;
+  interrupt-gpios = <&gpio1 9 1>;
+  status = "okay";
+ };
+
  codec: wm8960@1a {
   compatible = "wlf,wm8960";
   reg = <0x1a>;
@@ -1520,7 +1533,7 @@
    fsl,pins = <
     0x0090 0x031C 0x0000 0x5 0x0 0x17059
     0x0070 0x02FC 0x0000 0x4 0x0 0x17059
-    0x0080 0x030C 0x0000 0x5 0x0 0x17059
+
    >;
   };
 
@@ -1661,16 +1674,7 @@
     0x0048 0x02D4 0x05F0 0x2 0x0 0x17088
    >;
   };
-
-  pinctrl_tsc: tscgrp {
-   fsl,pins = <
-    0x0060 0x02EC 0x0000 0x5 0x0 0xb0
-    0x0064 0x02F0 0x0000 0x5 0x0 0xb0
-
-    0x006C 0x02F8 0x0000 0x5 0x0 0xb0
-   >;
-  };
-
+# 530 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
   pinctrl_uart1: uart1grp {
    fsl,pins = <
     0x0084 0x0310 0x0000 0x0 0x0 0x1b0b1
@@ -1815,6 +1819,11 @@
     0x009C 0x0328 0x055C 0x8 0x0 0x10b1
    >;
   };
+  pinctrl_tsc: tscgrp {
+   fsl,pins = <
+    0x0080 0x030C 0x0000 0x5 0x0 0x79
+   >;
+  };
  };
 };
 
@@ -1866,6 +1875,11 @@
                                 0x0028 0x006C 0x0000 0x5 0x0 0x10B0
                         >;
                 };
+  pinctrl_tsc_reset: tsc_reset {
+      fsl,pins = <
+        0x002C 0x0070 0x0000 0x5 0x0 0x10B0
+      >;
+    };
         };
 };
 
@@ -1945,7 +1959,7 @@
 
 &tsc {
  pinctrl-names = "default";
- pinctrl-0 = <&pinctrl_tsc>;
+
 
  measure-delay-time = <0xffff>;
  pre-charge-time = <0xfff>;
@@ -2001,7 +2015,7 @@
  vmmc-supply = <&reg_sd1_vmmc>;
  status = "okay";
 };
-# 855 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
+# 878 "arch/arm/boot/dts/imx6ull-hbb-emmc.dts"
 &usdhc2 {
  pinctrl-names = "default", "state_100mhz", "state_200mhz";
  pinctrl-0 = <&pinctrl_usdhc2_8bit>;
