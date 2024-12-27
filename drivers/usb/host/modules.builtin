@@ -1,2 +1,3 @@
 kernel/drivers/usb/host/ehci-hcd.ko
 kernel/drivers/usb/host/ehci-mxc.ko
+kernel/drivers/usb/host/ohci-hcd.ko

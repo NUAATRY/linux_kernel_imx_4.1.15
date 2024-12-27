@@ -1,0 +1,2 @@
+kernel/drivers/net/wireless/hostap/hostap.ko
+kernel/drivers/net/wireless/realtek/rtl8188EUS/8188eu.ko

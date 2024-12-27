@@ -23,10 +23,10 @@ __attribute__((section("__versions"))) = {
 	{ 0x18b41dfa, __VMLINUX_SYMBOL_STR(unregister_rpmsg_driver) },
 	{ 0xbcd347c0, __VMLINUX_SYMBOL_STR(register_rpmsg_driver) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
-	{ 0x59175f83, __VMLINUX_SYMBOL_STR(dev_err) },
+	{ 0x63961a83, __VMLINUX_SYMBOL_STR(dev_err) },
 	{ 0xe331d5f, __VMLINUX_SYMBOL_STR(rpmsg_send_offchannel_raw) },
 	{ 0xefd6cf06, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr0) },
-	{ 0xb91f4362, __VMLINUX_SYMBOL_STR(_dev_info) },
+	{ 0x9d2c1f73, __VMLINUX_SYMBOL_STR(_dev_info) },
 };
 
 static const char __module_depends[]

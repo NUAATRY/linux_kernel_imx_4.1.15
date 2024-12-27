@@ -16,18 +16,18 @@ static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
 	{ 0xfa985410, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0x9a921fab, __VMLINUX_SYMBOL_STR(skb_queue_head) },
-	{ 0x55e30b77, __VMLINUX_SYMBOL_STR(__dev_kfree_skb_any) },
-	{ 0x7cb3258f, __VMLINUX_SYMBOL_STR(skb_unlink) },
-	{ 0x5d34b1b6, __VMLINUX_SYMBOL_STR(__netdev_alloc_skb) },
-	{ 0x40a8606f, __VMLINUX_SYMBOL_STR(skb_dequeue_tail) },
+	{ 0x7c2f0942, __VMLINUX_SYMBOL_STR(skb_queue_head) },
+	{ 0xdc0bfa5d, __VMLINUX_SYMBOL_STR(__dev_kfree_skb_any) },
+	{ 0x145ebdd9, __VMLINUX_SYMBOL_STR(skb_unlink) },
+	{ 0x4962989f, __VMLINUX_SYMBOL_STR(__netdev_alloc_skb) },
+	{ 0x5da77f3, __VMLINUX_SYMBOL_STR(skb_dequeue_tail) },
 	{ 0xfa2a45e, __VMLINUX_SYMBOL_STR(__memzero) },
 	{ 0x16305289, __VMLINUX_SYMBOL_STR(warn_slowpath_null) },
-	{ 0xd609f554, __VMLINUX_SYMBOL_STR(skb_queue_tail) },
-	{ 0x22f43295, __VMLINUX_SYMBOL_STR(skb_dequeue) },
+	{ 0xb3d80a91, __VMLINUX_SYMBOL_STR(skb_queue_tail) },
+	{ 0xd4734e32, __VMLINUX_SYMBOL_STR(skb_dequeue) },
 	{ 0xefd6cf06, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr0) },
 	{ 0xb81960ca, __VMLINUX_SYMBOL_STR(snprintf) },
-	{ 0x53c476c4, __VMLINUX_SYMBOL_STR(skb_put) },
+	{ 0x92763995, __VMLINUX_SYMBOL_STR(skb_put) },
 };
 
 static const char __module_depends[]

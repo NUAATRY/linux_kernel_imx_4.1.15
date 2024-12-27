@@ -11,12 +11,14 @@ kernel/crypto/pcompress.ko
 kernel/crypto/cryptomgr.ko
 kernel/crypto/crypto_null.ko
 kernel/crypto/gf128mul.ko
+kernel/crypto/ecb.ko
 kernel/crypto/ctr.ko
 kernel/crypto/gcm.ko
 kernel/crypto/ccm.ko
 kernel/crypto/aes_generic.ko
 kernel/crypto/arc4.ko
 kernel/crypto/deflate.ko
+kernel/crypto/michael_mic.ko
 kernel/crypto/crc32c_generic.ko
 kernel/crypto/crct10dif_common.ko
 kernel/crypto/crct10dif_generic.ko

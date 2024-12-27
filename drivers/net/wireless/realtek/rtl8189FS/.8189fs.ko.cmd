@@ -1,0 +1,1 @@
+cmd_drivers/net/wireless/realtek/rtl8189FS/8189fs.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o drivers/net/wireless/realtek/rtl8189FS/8189fs.ko drivers/net/wireless/realtek/rtl8189FS/8189fs.o drivers/net/wireless/realtek/rtl8189FS/8189fs.mod.o

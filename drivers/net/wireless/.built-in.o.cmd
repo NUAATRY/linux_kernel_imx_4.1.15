@@ -1,1 +1,1 @@
-cmd_drivers/net/wireless/built-in.o :=  rm -f drivers/net/wireless/built-in.o; arm-linux-gnueabihf-ar rcsD drivers/net/wireless/built-in.o
+cmd_drivers/net/wireless/built-in.o :=  arm-linux-gnueabihf-ld -EL    -r -o drivers/net/wireless/built-in.o drivers/net/wireless/hostap/built-in.o drivers/net/wireless/realtek/built-in.o 

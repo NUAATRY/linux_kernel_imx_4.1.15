@@ -1,0 +1,1 @@
+cmd_drivers/net/wireless/realtek/rtl8188EUS/built-in.o :=  arm-linux-gnueabihf-ld -EL    --strip-debug -r -o drivers/net/wireless/realtek/rtl8188EUS/built-in.o drivers/net/wireless/realtek/rtl8188EUS/8188eu.o 
