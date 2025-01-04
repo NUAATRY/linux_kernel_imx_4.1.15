@@ -285,6 +285,8 @@ kernel/drivers/usb/host/ehci-mxc.ko
 kernel/drivers/usb/host/ohci-hcd.ko
 kernel/drivers/usb/phy/phy-generic.ko
 kernel/drivers/usb/phy/phy-mxs-usb.ko
+kernel/drivers/usb/serial/usbserial.ko
+kernel/drivers/usb/serial/ch341.ko
 kernel/drivers/usb/storage/usb-storage.ko
 kernel/drivers/video/backlight/lcd.ko
 kernel/drivers/video/backlight/l4f00242t03.ko
